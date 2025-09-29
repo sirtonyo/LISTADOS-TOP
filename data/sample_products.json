@@ -1,0 +1,339 @@
+{
+  "products": [
+    {
+      "id": "PROD-001",
+      "name": "Smartphone Pro Max 256GB",
+      "description": "Smartphone de última generación con cámara triple de 108MP, pantalla OLED de 6.7 pulgadas, procesador octa-core de alta velocidad y batería de larga duración. Ideal para fotografía profesional y gaming.",
+      "category": {
+        "primary": "Electrónicos",
+        "secondary": ["Smartphones", "Tecnología", "Comunicación"]
+      },
+      "price": {
+        "current": 899.99,
+        "original": 1199.99,
+        "currency": "USD",
+        "discount_percentage": 25
+      },
+      "availability": {
+        "in_stock": true,
+        "stock_quantity": 150
+      },
+      "supplier": {
+        "id": "SUP-TEC-001",
+        "name": "TechGlobal Solutions",
+        "rating": 4.8,
+        "country": "Corea del Sur"
+      },
+      "specifications": {
+        "dimensions": {
+          "length": 16.1,
+          "width": 7.8,
+          "height": 0.8,
+          "weight": 0.23,
+          "unit": "cm"
+        },
+        "material": "Aluminio y vidrio",
+        "color": ["Negro", "Plata", "Azul", "Oro"],
+        "size": ["256GB", "512GB"]
+      },
+      "analytics": {
+        "popularity_score": 95,
+        "view_count": 15420,
+        "purchase_count": 1247,
+        "conversion_rate": 0.081,
+        "average_rating": 4.6,
+        "review_count": 892,
+        "seasonal_trends": [
+          {"season": "spring", "demand_multiplier": 1.1},
+          {"season": "summer", "demand_multiplier": 0.9},
+          {"season": "fall", "demand_multiplier": 1.3},
+          {"season": "winter", "demand_multiplier": 1.5}
+        ]
+      },
+      "purchase_attributes": {
+        "min_order_quantity": 1,
+        "bulk_discount_tiers": [
+          {"min_quantity": 10, "discount_percentage": 5},
+          {"min_quantity": 50, "discount_percentage": 10},
+          {"min_quantity": 100, "discount_percentage": 15}
+        ],
+        "shipping_info": {
+          "free_shipping_threshold": 500,
+          "estimated_delivery_days": 3,
+          "shipping_regions": ["América del Norte", "América Latina", "Europa"]
+        },
+        "payment_options": ["credit_card", "debit_card", "paypal", "installments"]
+      },
+      "metadata": {
+        "created_at": "2024-01-15T10:30:00Z",
+        "updated_at": "2024-09-20T14:22:00Z",
+        "created_by": "admin_user",
+        "status": "active",
+        "tags": ["bestseller", "premium", "5g", "gaming", "photography"]
+      },
+      "images": [
+        {
+          "url": "https://example.com/images/smartphone-pro-max-front.jpg",
+          "alt_text": "Smartphone Pro Max vista frontal",
+          "is_primary": true,
+          "sort_order": 1
+        },
+        {
+          "url": "https://example.com/images/smartphone-pro-max-back.jpg",
+          "alt_text": "Smartphone Pro Max vista trasera",
+          "is_primary": false,
+          "sort_order": 2
+        }
+      ]
+    },
+    {
+      "id": "PROD-002",
+      "name": "Auriculares Inalámbricos Premium",
+      "description": "Auriculares con cancelación activa de ruido, sonido Hi-Fi, 30 horas de batería y estuche de carga inalámbrica. Perfectos para trabajo, estudio y entretenimiento.",
+      "category": {
+        "primary": "Audio",
+        "secondary": ["Auriculares", "Inalámbricos", "Premium"]
+      },
+      "price": {
+        "current": 249.99,
+        "original": 299.99,
+        "currency": "USD",
+        "discount_percentage": 16.7
+      },
+      "availability": {
+        "in_stock": true,
+        "stock_quantity": 300
+      },
+      "supplier": {
+        "id": "SUP-AUD-002",
+        "name": "SoundWave Technologies",
+        "rating": 4.7,
+        "country": "Alemania"
+      },
+      "specifications": {
+        "dimensions": {
+          "length": 12,
+          "width": 10,
+          "height": 3,
+          "weight": 0.25,
+          "unit": "cm"
+        },
+        "material": "Plástico premium y espuma memory",
+        "color": ["Negro", "Blanco", "Gris"]
+      },
+      "analytics": {
+        "popularity_score": 88,
+        "view_count": 8930,
+        "purchase_count": 654,
+        "conversion_rate": 0.073,
+        "average_rating": 4.4,
+        "review_count": 423,
+        "seasonal_trends": [
+          {"season": "spring", "demand_multiplier": 1.0},
+          {"season": "summer", "demand_multiplier": 1.2},
+          {"season": "fall", "demand_multiplier": 1.1},
+          {"season": "winter", "demand_multiplier": 0.8}
+        ]
+      },
+      "purchase_attributes": {
+        "min_order_quantity": 1,
+        "bulk_discount_tiers": [
+          {"min_quantity": 5, "discount_percentage": 3},
+          {"min_quantity": 20, "discount_percentage": 7},
+          {"min_quantity": 50, "discount_percentage": 12}
+        ],
+        "shipping_info": {
+          "free_shipping_threshold": 200,
+          "estimated_delivery_days": 2,
+          "shipping_regions": ["Global"]
+        },
+        "payment_options": ["credit_card", "debit_card", "paypal", "bank_transfer"]
+      },
+      "metadata": {
+        "created_at": "2024-02-10T09:15:00Z",
+        "updated_at": "2024-09-18T11:45:00Z",
+        "created_by": "product_manager",
+        "status": "active",
+        "tags": ["audio", "wireless", "noise-cancelling", "premium", "work-from-home"]
+      },
+      "images": [
+        {
+          "url": "https://example.com/images/headphones-premium-main.jpg",
+          "alt_text": "Auriculares Premium vista principal",
+          "is_primary": true,
+          "sort_order": 1
+        }
+      ]
+    },
+    {
+      "id": "PROD-003",
+      "name": "Laptop Ultrabook 14\" i7 16GB",
+      "description": "Laptop ultradelgada con procesador Intel i7 de 11ª generación, 16GB RAM, SSD 512GB, pantalla 4K y batería de 12 horas. Ideal para profesionales y creativos.",
+      "category": {
+        "primary": "Computadoras",
+        "secondary": ["Laptops", "Ultrabooks", "Profesional"]
+      },
+      "price": {
+        "current": 1299.99,
+        "currency": "USD"
+      },
+      "availability": {
+        "in_stock": false,
+        "stock_quantity": 0,
+        "estimated_restock_date": "2024-10-15"
+      },
+      "supplier": {
+        "id": "SUP-COMP-003",
+        "name": "EliteComputers Inc",
+        "rating": 4.9,
+        "country": "Estados Unidos"
+      },
+      "specifications": {
+        "dimensions": {
+          "length": 32.1,
+          "width": 21.5,
+          "height": 1.6,
+          "weight": 1.2,
+          "unit": "cm"
+        },
+        "material": "Aleación de magnesio",
+        "color": ["Gris espacial", "Plata"]
+      },
+      "analytics": {
+        "popularity_score": 92,
+        "view_count": 12150,
+        "purchase_count": 234,
+        "conversion_rate": 0.019,
+        "average_rating": 4.8,
+        "review_count": 156,
+        "seasonal_trends": [
+          {"season": "spring", "demand_multiplier": 1.2},
+          {"season": "summer", "demand_multiplier": 0.8},
+          {"season": "fall", "demand_multiplier": 1.4},
+          {"season": "winter", "demand_multiplier": 1.0}
+        ]
+      },
+      "purchase_attributes": {
+        "min_order_quantity": 1,
+        "bulk_discount_tiers": [
+          {"min_quantity": 3, "discount_percentage": 2},
+          {"min_quantity": 10, "discount_percentage": 5},
+          {"min_quantity": 25, "discount_percentage": 8}
+        ],
+        "shipping_info": {
+          "free_shipping_threshold": 1000,
+          "estimated_delivery_days": 5,
+          "shipping_regions": ["América del Norte", "Europa"]
+        },
+        "payment_options": ["credit_card", "debit_card", "bank_transfer", "installments"]
+      },
+      "metadata": {
+        "created_at": "2024-03-05T14:20:00Z",
+        "updated_at": "2024-09-25T16:30:00Z",
+        "created_by": "tech_specialist",
+        "status": "active",
+        "tags": ["laptop", "ultrabook", "professional", "4k", "lightweight"]
+      },
+      "images": [
+        {
+          "url": "https://example.com/images/laptop-ultrabook-open.jpg",
+          "alt_text": "Laptop Ultrabook abierta mostrando pantalla",
+          "is_primary": true,
+          "sort_order": 1
+        },
+        {
+          "url": "https://example.com/images/laptop-ultrabook-closed.jpg",
+          "alt_text": "Laptop Ultrabook cerrada vista superior",
+          "is_primary": false,
+          "sort_order": 2
+        }
+      ]
+    },
+    {
+      "id": "PROD-004",
+      "name": "Smartwatch Deportivo GPS",
+      "description": "Reloj inteligente resistente al agua con GPS integrado, monitor de frecuencia cardíaca, seguimiento de 20+ deportes y batería de 7 días. Perfecto para atletas y personas activas.",
+      "category": {
+        "primary": "Wearables",
+        "secondary": ["Smartwatch", "Deportivo", "Fitness"]
+      },
+      "price": {
+        "current": 199.99,
+        "original": 249.99,
+        "currency": "USD",
+        "discount_percentage": 20
+      },
+      "availability": {
+        "in_stock": true,
+        "stock_quantity": 89
+      },
+      "supplier": {
+        "id": "SUP-WEAR-004",
+        "name": "FitTech Solutions",
+        "rating": 4.5,
+        "country": "China"
+      },
+      "specifications": {
+        "dimensions": {
+          "length": 4.6,
+          "width": 3.8,
+          "height": 1.2,
+          "weight": 0.045,
+          "unit": "cm"
+        },
+        "material": "Silicona y aluminio",
+        "color": ["Negro", "Azul", "Verde", "Rojo"],
+        "size": ["S", "M", "L"]
+      },
+      "analytics": {
+        "popularity_score": 78,
+        "view_count": 6780,
+        "purchase_count": 445,
+        "conversion_rate": 0.066,
+        "average_rating": 4.2,
+        "review_count": 298,
+        "seasonal_trends": [
+          {"season": "spring", "demand_multiplier": 1.3},
+          {"season": "summer", "demand_multiplier": 1.5},
+          {"season": "fall", "demand_multiplier": 1.1},
+          {"season": "winter", "demand_multiplier": 0.7}
+        ]
+      },
+      "purchase_attributes": {
+        "min_order_quantity": 1,
+        "bulk_discount_tiers": [
+          {"min_quantity": 5, "discount_percentage": 5},
+          {"min_quantity": 15, "discount_percentage": 10},
+          {"min_quantity": 30, "discount_percentage": 15}
+        ],
+        "shipping_info": {
+          "free_shipping_threshold": 150,
+          "estimated_delivery_days": 4,
+          "shipping_regions": ["Global"]
+        },
+        "payment_options": ["credit_card", "debit_card", "paypal", "cash_on_delivery"]
+      },
+      "metadata": {
+        "created_at": "2024-04-12T08:45:00Z",
+        "updated_at": "2024-09-22T13:15:00Z",
+        "created_by": "fitness_specialist",
+        "status": "active",
+        "tags": ["smartwatch", "fitness", "gps", "waterproof", "sports"]
+      },
+      "images": [
+        {
+          "url": "https://example.com/images/smartwatch-sports-main.jpg",
+          "alt_text": "Smartwatch deportivo vista principal",
+          "is_primary": true,
+          "sort_order": 1
+        },
+        {
+          "url": "https://example.com/images/smartwatch-sports-colors.jpg",
+          "alt_text": "Smartwatch deportivo diferentes colores",
+          "is_primary": false,
+          "sort_order": 2
+        }
+      ]
+    }
+  ]
+}

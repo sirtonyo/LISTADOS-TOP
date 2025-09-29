@@ -1,0 +1,71 @@
+{
+  "system": {
+    "name": "LISTADOS-TOP",
+    "version": "1.0.0",
+    "description": "Sistema de listados enriquecidos para compras y analítica",
+    "author": "Sistema de Gestión de Productos"
+  },
+  "data": {
+    "schema_version": "1.0",
+    "supported_currencies": ["USD", "EUR", "MXN", "COP", "ARS", "PEN", "CLP"],
+    "default_currency": "USD",
+    "max_products_per_page": 50,
+    "cache_duration_minutes": 30
+  },
+  "analytics": {
+    "enable_tracking": true,
+    "popularity_score_weight": {
+      "view_count": 0.3,
+      "purchase_count": 0.4,
+      "rating": 0.2,
+      "review_count": 0.1
+    },
+    "seasonal_analysis": {
+      "seasons": ["spring", "summer", "fall", "winter"],
+      "trend_threshold": 0.1
+    },
+    "conversion_benchmarks": {
+      "excellent": 0.08,
+      "good": 0.05,
+      "average": 0.03,
+      "poor": 0.01
+    }
+  },
+  "purchase": {
+    "enable_recommendations": true,
+    "max_recommendations": 10,
+    "recommendation_weights": {
+      "category_match": 30,
+      "price_similarity": 20,
+      "tag_match": 15,
+      "rating_boost": 10,
+      "popularity_boost": 5
+    },
+    "bulk_discount": {
+      "enable": true,
+      "max_discount_percentage": 50
+    },
+    "search": {
+      "enable_fuzzy_search": true,
+      "min_search_score": 5,
+      "max_results": 100
+    }
+  },
+  "inventory": {
+    "low_stock_threshold": 50,
+    "out_of_stock_alert": true,
+    "restock_lead_time_days": 14
+  },
+  "shipping": {
+    "default_regions": ["América del Norte", "América Latina", "Europa"],
+    "free_shipping_threshold": 500,
+    "default_delivery_days": 5
+  },
+  "validation": {
+    "required_fields": ["id", "name", "category", "price", "availability", "metadata"],
+    "max_name_length": 200,
+    "max_description_length": 2000,
+    "min_price": 0.01,
+    "max_images": 10
+  }
+}

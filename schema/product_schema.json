@@ -1,0 +1,275 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Product Listing Schema",
+  "description": "Schema for enriched product listings for purchases and analytics",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "category",
+    "price",
+    "availability",
+    "metadata"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique product identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Product name",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed product description",
+      "maxLength": 2000
+    },
+    "category": {
+      "type": "object",
+      "required": ["primary"],
+      "properties": {
+        "primary": {
+          "type": "string",
+          "description": "Primary category"
+        },
+        "secondary": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Secondary categories/tags"
+        }
+      }
+    },
+    "price": {
+      "type": "object",
+      "required": ["current", "currency"],
+      "properties": {
+        "current": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Current price"
+        },
+        "original": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Original price before discounts"
+        },
+        "currency": {
+          "type": "string",
+          "enum": ["USD", "EUR", "MXN", "COP", "ARS", "PEN", "CLP"],
+          "description": "Price currency"
+        },
+        "discount_percentage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Discount percentage if applicable"
+        }
+      }
+    },
+    "availability": {
+      "type": "object",
+      "required": ["in_stock"],
+      "properties": {
+        "in_stock": {
+          "type": "boolean",
+          "description": "Product availability status"
+        },
+        "stock_quantity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Available quantity"
+        },
+        "estimated_restock_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Expected restock date if out of stock"
+        }
+      }
+    },
+    "supplier": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Supplier identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Supplier name"
+        },
+        "rating": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Supplier rating (0-5)"
+        },
+        "country": {
+          "type": "string",
+          "description": "Supplier country"
+        }
+      }
+    },
+    "specifications": {
+      "type": "object",
+      "properties": {
+        "dimensions": {
+          "type": "object",
+          "properties": {
+            "length": {"type": "number", "minimum": 0},
+            "width": {"type": "number", "minimum": 0},
+            "height": {"type": "number", "minimum": 0},
+            "weight": {"type": "number", "minimum": 0},
+            "unit": {"type": "string", "enum": ["cm", "m", "in", "ft"]}
+          }
+        },
+        "material": {
+          "type": "string",
+          "description": "Primary material"
+        },
+        "color": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Available colors"
+        },
+        "size": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Available sizes"
+        }
+      }
+    },
+    "analytics": {
+      "type": "object",
+      "properties": {
+        "popularity_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Product popularity score (0-100)"
+        },
+        "view_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total product views"
+        },
+        "purchase_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total purchases"
+        },
+        "conversion_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "View to purchase conversion rate"
+        },
+        "average_rating": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Average customer rating"
+        },
+        "review_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of customer reviews"
+        },
+        "seasonal_trends": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "season": {"type": "string", "enum": ["spring", "summer", "fall", "winter"]},
+              "demand_multiplier": {"type": "number", "minimum": 0}
+            }
+          }
+        }
+      }
+    },
+    "purchase_attributes": {
+      "type": "object",
+      "properties": {
+        "min_order_quantity": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Minimum order quantity"
+        },
+        "bulk_discount_tiers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "min_quantity": {"type": "integer", "minimum": 1},
+              "discount_percentage": {"type": "number", "minimum": 0, "maximum": 100}
+            }
+          }
+        },
+        "shipping_info": {
+          "type": "object",
+          "properties": {
+            "free_shipping_threshold": {"type": "number", "minimum": 0},
+            "estimated_delivery_days": {"type": "integer", "minimum": 1},
+            "shipping_regions": {
+              "type": "array",
+              "items": {"type": "string"}
+            }
+          }
+        },
+        "payment_options": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["credit_card", "debit_card", "paypal", "bank_transfer", "cash_on_delivery", "installments"]
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["created_at", "status"],
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Product creation timestamp"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp"
+        },
+        "created_by": {
+          "type": "string",
+          "description": "User who created the listing"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "inactive", "pending", "discontinued"],
+          "description": "Product status"
+        },
+        "tags": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Additional searchable tags"
+        }
+      }
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {"type": "string", "format": "uri"},
+          "alt_text": {"type": "string"},
+          "is_primary": {"type": "boolean"},
+          "sort_order": {"type": "integer", "minimum": 0}
+        }
+      }
+    }
+  }
+}
