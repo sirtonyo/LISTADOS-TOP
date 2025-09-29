@@ -1,0 +1,56 @@
+{
+  "development": {
+    "debug": true,
+    "log_level": "DEBUG",
+    "data_source": "file",
+    "sample_data": true,
+    "cache_enabled": false,
+    "api_endpoints": {
+      "products": "http://localhost:3000/api/products",
+      "analytics": "http://localhost:3000/api/analytics"
+    },
+    "database": {
+      "type": "sqlite",
+      "path": "./data/products.db"
+    }
+  },
+  "staging": {
+    "debug": false,
+    "log_level": "INFO",
+    "data_source": "database",
+    "sample_data": false,
+    "cache_enabled": true,
+    "api_endpoints": {
+      "products": "https://staging-api.listados-top.com/api/products",
+      "analytics": "https://staging-api.listados-top.com/api/analytics"
+    },
+    "database": {
+      "type": "postgresql",
+      "host": "staging-db.listados-top.com",
+      "port": 5432,
+      "database": "listados_staging"
+    }
+  },
+  "production": {
+    "debug": false,
+    "log_level": "ERROR",
+    "data_source": "database",
+    "sample_data": false,
+    "cache_enabled": true,
+    "api_endpoints": {
+      "products": "https://api.listados-top.com/api/products",
+      "analytics": "https://api.listados-top.com/api/analytics"
+    },
+    "database": {
+      "type": "postgresql",
+      "host": "prod-db.listados-top.com",
+      "port": 5432,
+      "database": "listados_production"
+    },
+    "security": {
+      "api_key_required": true,
+      "rate_limiting": true,
+      "max_requests_per_minute": 1000
+    }
+  }
+}
